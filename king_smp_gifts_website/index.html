@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#160f22">
+  <meta name="description" content="Bộ quà 16 ngày KingSMP dành cho Nhữ Đình Phong.">
+  <title>16 Days of KingSMP</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="particles" aria-hidden="true"></div>
+
+  <header class="hero">
+    <div class="logo-box" aria-hidden="true">
+      <span class="lid"></span>
+      <span class="body"></span>
+      <span class="latch"></span>
+    </div>
+    <p class="eyebrow">KING SMP • BỘ QUÀ 16 NGÀY</p>
+    <h1>16 Days of KingSMP</h1>
+    <p class="intro">
+      Mỗi ngày, một trang quà mới sẽ được mở khóa dành cho
+      <strong id="recipientName">Nhữ Đình Phong</strong>.
+    </p>
+    <div class="status-panel" aria-live="polite">
+      <span class="status-dot"></span>
+      <div>
+        <span class="status-label" id="statusLabel">Đang kiểm tra thời gian…</span>
+        <strong class="countdown" id="countdown">--:--:--</strong>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="gift-grid" id="giftGrid" aria-label="Danh sách 16 hộp quà"></section>
+  </main>
+
+  <footer>
+    <p>Prepared by <strong id="ownerName">Nguyễn Xuân Vinh</strong></p>
+    <p class="small">KingSMP • 16 Shulker Gifts</p>
+  </footer>
+
+  <dialog class="viewer" id="viewer">
+    <button class="close-button" id="closeButton" aria-label="Đóng ảnh">×</button>
+    <button class="nav-button previous" id="previousButton" aria-label="Ảnh trước">‹</button>
+    <figure>
+      <figcaption id="viewerCaption">Day 1</figcaption>
+      <img id="viewerImage" alt="Trang quà KingSMP">
+    </figure>
+    <button class="nav-button next" id="nextButton" aria-label="Ảnh tiếp theo">›</button>
+  </dialog>
+
+  <noscript>
+    <div class="noscript">Trang này cần JavaScript để kiểm tra ngày mở khóa.</div>
+  </noscript>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
