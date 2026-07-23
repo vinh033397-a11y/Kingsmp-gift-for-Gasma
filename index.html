@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#160f22">
+  <meta name="description" content="Bộ quà 16 ngày KingSMP dành cho Nhữ Đình Phong.">
+  <title>16 Days of KingSMP</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="particles" aria-hidden="true"></div>
+  <div class="floating-orbs" aria-hidden="true"></div>
+
+  <div class="preview-badge" id="previewBadge" hidden>CHẾ ĐỘ XEM THỬ</div>
+
+  <header class="hero">
+    <button class="logo-box" id="logoBox" type="button" aria-label="Logo Shulker">
+      <span class="lid"></span>
+      <span class="body"></span>
+      <span class="latch"></span>
+    </button>
+    <p class="eyebrow">KING SMP • BỘ QUÀ 16 NGÀY</p>
+    <h1>16 Days of KingSMP</h1>
+    <p class="intro">
+      Mỗi ngày, một trang quà mới sẽ được mở khóa dành cho
+      <strong id="recipientName">Nhữ Đình Phong</strong>.
+    </p>
+
+    <div class="status-panel" aria-live="polite">
+      <span class="status-dot"></span>
+      <div class="status-copy">
+        <span class="status-label" id="statusLabel">Đang kiểm tra thời gian…</span>
+        <div class="countdown-grid" id="countdownGrid" hidden>
+          <span><strong id="countDays">00</strong><small>NGÀY</small></span>
+          <span><strong id="countHours">00</strong><small>GIỜ</small></span>
+          <span><strong id="countMinutes">00</strong><small>PHÚT</small></span>
+          <span><strong id="countSeconds">00</strong><small>GIÂY</small></span>
+        </div>
+        <strong class="countdown-complete" id="countdownComplete">--:--:--</strong>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="gift-grid" id="giftGrid" aria-label="Danh sách 16 hộp quà"></section>
+  </main>
+
+  <footer>
+    <button class="memories-button" id="memoriesButton" type="button">📖 Memories</button>
+    <p>Prepared by <strong id="ownerName">Nguyễn Xuân Vinh</strong></p>
+    <p class="small">KingSMP • 16 Shulker Gifts</p>
+  </footer>
+
+  <dialog class="viewer" id="viewer">
+    <button class="close-button" id="closeButton" aria-label="Đóng ảnh">×</button>
+    <button class="nav-button previous" id="previousButton" aria-label="Ảnh trước">‹</button>
+    <figure>
+      <figcaption>
+        <span id="viewerCaption">Day 1</span>
+        <small id="viewerJournal"></small>
+      </figcaption>
+      <img id="viewerImage" alt="Trang quà KingSMP">
+    </figure>
+    <button class="nav-button next" id="nextButton" aria-label="Ảnh tiếp theo">›</button>
+  </dialog>
+
+  <dialog class="memories-dialog" id="memoriesDialog">
+    <button class="close-button" id="closeMemoriesButton" aria-label="Đóng Memories">×</button>
+    <div class="memories-content">
+      <p class="eyebrow">KING SMP ARCHIVE</p>
+      <h2>Memories</h2>
+      <p class="memories-intro">Những điều nhỏ bé đã tạo nên cả một hành trình.</p>
+      <ul id="memoriesList"></ul>
+      <p class="memories-signature">Prepared by <strong id="memoriesOwner">Nguyễn Xuân Vinh</strong></p>
+    </div>
+  </dialog>
+
+  <div class="opening-overlay" id="openingOverlay" hidden aria-hidden="true">
+    <div class="opening-glow"></div>
+    <div class="shulker-animation" id="shulkerAnimation">
+      <div class="shulker-lid"></div>
+      <div class="shulker-body"></div>
+      <div class="shulker-eye"></div>
+      <div class="shulker-light"></div>
+    </div>
+    <p id="openingText">Đang mở Shulker…</p>
+  </div>
+
+  <div class="achievement" id="achievement" hidden role="status" aria-live="polite">
+    <div class="achievement-icon">🏆</div>
+    <div>
+      <small>ACHIEVEMENT UNLOCKED</small>
+      <strong id="achievementTitle">The Beginning</strong>
+    </div>
+  </div>
+
+  <div class="milestone-overlay" id="milestoneOverlay" hidden>
+    <canvas id="confettiCanvas"></canvas>
+    <div class="milestone-card">
+      <p class="eyebrow" id="milestoneEyebrow">MILESTONE REACHED</p>
+      <h2 id="milestoneTitle">One Week Complete!</h2>
+      <p id="milestoneText">Cậu đã đi được một tuần trong hành trình 16 ngày.</p>
+      <button id="milestoneContinue" type="button">Tiếp tục mở quà</button>
+    </div>
+  </div>
+
+  <div class="cinematic" id="cinematic" hidden>
+    <canvas id="fireworksCanvas"></canvas>
+    <div class="cinematic-copy" id="cinematicCopy"></div>
+    <button class="skip-cinematic" id="skipCinematic" type="button">Bỏ qua</button>
+  </div>
+
+  <div class="completion-screen" id="completionScreen" hidden>
+    <div class="completion-inner">
+      <p class="eyebrow">JOURNEY COMPLETE</p>
+      <h2>16 Days. 16 Memories.<br>1 Friendship.</h2>
+      <p>Thank you for opening all 16 gifts.</p>
+      <p class="completion-highlight">See you soon on KingSMP.</p>
+      <button id="returnButton" type="button">Quay lại bộ quà</button>
+    </div>
+  </div>
+
+  <div class="easter-egg" id="easterEgg" hidden></div>
+
+  <noscript>
+    <div class="noscript">Trang này cần JavaScript để kiểm tra ngày mở khóa.</div>
+  </noscript>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
